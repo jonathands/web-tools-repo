@@ -2,15 +2,14 @@
 namespace Whatsapp;
 
 use Base\Base;
-use Monolog\Logger;
 
 class Utils extends Base
 {
-    function getUrl($countryCode,$phone)
-    {
-        new Logger($this->getConfig("Logger")['module_log']);
+    function getUrl($countryCode,$phone,$text="")
+    {     
         $phone_number_only = preg_replace("/[^0-9]/", "", $countryCode.$phone);
-
+        $this->log("Linking phone: "+$phone_number_only);
+        
         if(!$phone_number_only)
         {
             $error = UE_INVALID_PHONE;
@@ -19,14 +18,16 @@ class Utils extends Base
         
         $phone = $phone_number_only;
         
-        $text = urlencode($_GET['text']);
-        
         $api = "api";
         
         if($this->isMobile)
         {
             $api = "web";
         }
-        return 'https://'.$api.'.whatsapp.com/send?phone='.$phone.'&text='.$text;
+
+        $link = 'https://'.$api.'.whatsapp.com/send?phone='.$phone.'&text='.$text;
+        $this->log("Linking phone: "+$phone_number_only+": final link "+$link);
+        
+        return $link;
     }
 }

@@ -7,9 +7,8 @@ $confs =  array('autoloader' =>
                               'modules/whatsapp',
                               ) 
                       ),
-                array ('logger' => 
+                'logger' => 
                         array('system_log' => "system-log1.0",
                               'module_log' => 'module-log1.0'
                         )
-                    )
-            ) ;
+            );
