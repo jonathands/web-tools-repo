@@ -15,6 +15,14 @@ class ComposerStaticInit458296f6a062b61cff6eff6ebfaaa406
         array (
             'Utils\\' => 6,
         ),
+        'P' => 
+        array (
+            'Psr\\Log\\' => 8,
+        ),
+        'M' => 
+        array (
+            'Monolog\\' => 8,
+        ),
         'B' => 
         array (
             'Base\\' => 5,
@@ -29,6 +37,14 @@ class ComposerStaticInit458296f6a062b61cff6eff6ebfaaa406
         'Utils\\' => 
         array (
             0 => __DIR__ . '/../..' . '/utils',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
         'Base\\' => 
         array (

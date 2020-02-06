@@ -1,6 +1,7 @@
 {
     "require": {
-        "mobiledetect/mobiledetectlib": "^2.8"
+        "mobiledetect/mobiledetectlib": "^2.8",
+        "monolog/monolog": "^2.0"
     },
 
     "autoload":{
