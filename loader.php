@@ -1,21 +1,10 @@
 <?php
-define("CONFNAME","confs.json.php");
-define("LOADERNAME","autoloader.php");
+define("BASE_SYS_CONF",__DIR__.DIRECTORY_SEPARATOR."utils".DIRECTORY_SEPARATOR."confs.php");
+$files["configurations"] = BASE_SYS_CONF;
 
-$files["autoloader"] = __DIR__."utils".DIRECTORY_SEPARATOR.LOADERNAME;
-$files["configurations"] = __DIR__."utils".DIRECTORY_SEPARATOR.CONFNAME;
-
-if(!file_exists($files["autoloader"]) || !file_exists($files["configurations"]))
+if(!file_exists($files["configurations"]))
 {
-    throw new Exception("Essential files not found ".CONFNAME." or ".LOADERNAME."");
+    throw new Exception("Essential files not found ".BASE_SYS_CONF."");
 }
-
-$confs = json_decode(file_get_contents($files["configurations"]));
-
-if(!$confs)
-{
-    throw new Exception("Malformed json in confs.json.php");
-}
-
-include $files["autoloader"];
-Autoloader::register($confs);
+include $files["configurations"];
+define("BASE_SYS_CONFS_LOADED",$confs);

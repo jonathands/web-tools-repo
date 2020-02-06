@@ -1,17 +1,18 @@
 <?php 
+namespace Whatsapp;
 
-class WhatappUtils extends base
+use Base\Base;
+
+class Utils extends Base
 {
     function getUrl($countryCode,$phone)
     {
-        
         $phone_number_only = preg_replace("/[^0-9]/", "", $countryCode.$phone);
 
         if(!$phone_number_only)
         {
-            $error = ;
-            header('HTTP/1.0 500 '.$error);
-            throw new Exception($error);
+            $error = UE_INVALID_PHONE;
+            throw new \Exception($error);
         }
         
         $phone = $phone_number_only;
@@ -20,8 +21,7 @@ class WhatappUtils extends base
         
         $api = "api";
         
-        $isMobile = (new Mobile_Detect())->isMobile();
-        if(!$isMobile)
+        if($this->isMobile)
         {
             $api = "web";
         }

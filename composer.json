@@ -1,0 +1,13 @@
+{
+    "require": {
+        "mobiledetect/mobiledetectlib": "^2.8"
+    },
+
+    "autoload":{
+        "psr-4" :{
+            "Base\\":"utils/",
+            "Utils\\":"utils/",
+            "Whatsapp\\":"modules/Whatsapp/"
+        }
+    }
+}
