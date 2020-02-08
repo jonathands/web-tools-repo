@@ -8,7 +8,7 @@ class Utils extends Base
     function getUrl($countryCode,$phone,$text="")
     {     
         $phone_number_only = preg_replace("/[^0-9]/", "", $countryCode.$phone);
-        $this->log("Linking phone: "+$phone_number_only);
+        $this->log("Linking phone: ".$phone_number_only);
         
         if(!$phone_number_only)
         {
@@ -26,7 +26,7 @@ class Utils extends Base
         }
 
         $link = 'https://'.$api.'.whatsapp.com/send?phone='.$phone.'&text='.$text;
-        $this->log("Linking phone: "+$phone_number_only+": final link "+$link);
+        $this->log("Linking phone: ".$phone_number_only.": final link ".$link);
         
         return $link;
     }
