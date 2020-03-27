@@ -103,5 +103,6 @@ class Base
         }
 
         print($output);
+        error_clear_last();
     }
 }

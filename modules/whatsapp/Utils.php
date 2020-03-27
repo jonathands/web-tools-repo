@@ -20,7 +20,7 @@ class Utils extends Base
         
         $api = "api";
         
-        if($this->isMobile)
+        if(!$this->isMobile)
         {
             $api = "web";
         }

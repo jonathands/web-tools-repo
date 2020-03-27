@@ -6,4 +6,4 @@ use Whatsapp\Utils;
 
 $WppUtils = new \Whatsapp\Utils();
 
-echo $WppUtils->getUrl("55","47989223305");
+echo $WppUtils->getUrl("55",$_GET['phone']);
